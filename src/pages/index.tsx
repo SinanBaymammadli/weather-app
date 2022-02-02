@@ -1,28 +1,43 @@
 import type { NextPage, GetServerSideProps } from "next";
+import { useState } from "react";
 import { Header } from "../components/Header/Header";
 import { WeatherList } from "../components/WeatherList/WeatherList";
+import { WeatherRepository } from "../data";
+import { Weather } from "../models";
 import styles from "./index.module.scss";
 
-interface Props {
-  text: "hello";
+interface HomeProps {
+  list: Weather[];
 }
 
-export const getServerSideProps: GetServerSideProps<Props> = async (
-  context
-) => {
+export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
+  const list = await WeatherRepository.getWeatherList();
+
   return {
-    props: {
-      text: "hello",
-    },
+    props: { list },
   };
 };
 
-const Home: NextPage<Props> = ({ text }) => {
+const Home: NextPage<HomeProps> = ({ list }) => {
+  const [selectedDate, setSelectedDate] = useState(list[0].date);
+  const selected = list.find((item) => item.date === selectedDate);
+
   return (
     <div className={styles.page}>
-      <Header />
+      {selected && (
+        <Header
+          date={selected.date}
+          city={selected.city}
+          temperature={selected.temperature}
+          condition={selected.condition}
+        />
+      )}
 
-      <WeatherList />
+      <WeatherList
+        list={list}
+        selectedDate={selectedDate}
+        onSelectedDateChange={(date) => setSelectedDate(date)}
+      />
     </div>
   );
 };

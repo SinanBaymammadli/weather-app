@@ -1,4 +1,4 @@
-@import "../../breakpoints.scss";
+@import "../../styles/breakpoints.scss";
 
 .header {
   max-width: 1600px;
@@ -55,6 +55,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  h1 {
+    text-align: center;
+    width: 3ch;
+  }
 }
 
 .weather_min_max {

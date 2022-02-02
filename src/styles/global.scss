@@ -1,4 +1,4 @@
-@import "../breakpoints.scss";
+@import "./breakpoints.scss";
 
 :root {
   --main-bg-color: #262a59;
@@ -6,10 +6,6 @@
   --main-text-color: #ffffff;
   --secondary-text-color: #a8aabd;
   --font-family: Roboto;
-  --font-size-h1: 246px;
-  --font-size-h2: 99px;
-  --font-size-h3: 83px;
-  --font-size-p: 48px;
 }
 
 html,
@@ -42,7 +38,6 @@ svg {
 }
 
 // typograph
-
 html {
   font-size: 16px;
 }

@@ -29,6 +29,10 @@
   &:hover {
     background-color: var(--secondary-bg-color);
   }
+
+  &.selected {
+    background-color: var(--secondary-bg-color);
+  }
 }
 
 .item svg {

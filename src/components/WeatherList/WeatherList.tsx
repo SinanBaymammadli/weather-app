@@ -1,19 +1,45 @@
-import React from "react";
+import format from "date-fns/format";
+import React, { useState } from "react";
+import { Weather } from "../../models";
+import { kelvinToCelcius } from "../../utils";
+import CloudIcon from "../Icons/CloudIcon";
 import SunIcon from "../Icons/SunIcon";
 import styles from "./WeatherList.module.scss";
 
-export function WeatherList() {
+interface WeatherList {
+  list: Weather[];
+  selectedDate: string;
+  onSelectedDateChange: (date: string) => void;
+}
+
+export function WeatherList({
+  list,
+  selectedDate,
+  onSelectedDateChange,
+}: WeatherList) {
   return (
     <div className={styles.list}>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => (
-        <button className={styles.item} key={i}>
-          <p className={styles.time}>10:00</p>
-          <div>
-            <SunIcon />
-          </div>
-          <h3 className={styles.degree}>12°</h3>
-        </button>
-      ))}
+      {list?.map((weather) => {
+        const isSelected = weather.date === selectedDate;
+
+        return (
+          <button
+            className={`${styles.item} ${isSelected ? styles.selected : ""}`}
+            key={weather.date}
+            onClick={() => onSelectedDateChange(weather.date)}
+          >
+            <p className={styles.time}>
+              {format(new Date(weather.date), "HH:mm")}
+            </p>
+            <div>
+              {weather.condition === "Clear" ? <SunIcon /> : <CloudIcon />}
+            </div>
+            <h3 className={styles.degree}>
+              {kelvinToCelcius(weather.temperature.current)}°
+            </h3>
+          </button>
+        );
+      })}
     </div>
   );
 }
