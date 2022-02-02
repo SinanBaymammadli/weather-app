@@ -2,12 +2,7 @@ import React from "react";
 
 export default function CloudIcon() {
   return (
-    <svg
-      fill="none"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-    >
+    <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <clipPath id="a">
         <path d="m0 0h24v24h-24z" />
       </clipPath>

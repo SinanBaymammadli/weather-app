@@ -3,17 +3,17 @@
 :root {
   --main-bg-color: #262a59;
   --secondary-bg-color: #51557a;
-  --main-text-color: #ffffff;
+  --main-text-color: #fff;
   --secondary-text-color: #a8aabd;
-  --font-family: Roboto;
+  --font-family: roboto;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-family), -apple-system, BlinkMacSystemFont, Segoe UI,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu, Cantarell, "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
@@ -37,7 +37,8 @@ svg {
   fill: #ffc700;
 }
 
-// typograph
+/* typograph */
+
 html {
   font-size: 16px;
 }

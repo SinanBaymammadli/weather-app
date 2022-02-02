@@ -1,5 +1,6 @@
-import type { NextPage, GetServerSideProps } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 import { useState } from "react";
+
 import { Header } from "../components/Header/Header";
 import { WeatherList } from "../components/WeatherList/WeatherList";
 import { WeatherRepository } from "../data";
@@ -33,11 +34,7 @@ const Home: NextPage<HomeProps> = ({ list }) => {
         />
       )}
 
-      <WeatherList
-        list={list}
-        selectedDate={selectedDate}
-        onSelectedDateChange={(date) => setSelectedDate(date)}
-      />
+      <WeatherList list={list} selectedDate={selectedDate} onSelectedDateChange={(date) => setSelectedDate(date)} />
     </div>
   );
 };

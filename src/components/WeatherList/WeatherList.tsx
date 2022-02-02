@@ -1,5 +1,6 @@
 import format from "date-fns/format";
 import React from "react";
+
 import { Weather } from "../../models";
 import CloudIcon from "../Icons/CloudIcon";
 import SunIcon from "../Icons/SunIcon";
@@ -11,11 +12,7 @@ interface WeatherList {
   onSelectedDateChange: (date: string) => void;
 }
 
-export function WeatherList({
-  list,
-  selectedDate,
-  onSelectedDateChange,
-}: WeatherList) {
+export function WeatherList({ list, selectedDate, onSelectedDateChange }: WeatherList) {
   return (
     <div className={styles.list}>
       {list?.map((weather) => {
@@ -27,12 +24,8 @@ export function WeatherList({
             key={weather.date}
             onClick={() => onSelectedDateChange(weather.date)}
           >
-            <p className={styles.time}>
-              {format(new Date(weather.date), "HH:mm")}
-            </p>
-            <div>
-              {weather.condition === "Clear" ? <SunIcon /> : <CloudIcon />}
-            </div>
+            <p className={styles.time}>{format(new Date(weather.date), "HH:mm")}</p>
+            <div>{weather.condition === "Clear" ? <SunIcon /> : <CloudIcon />}</div>
             <h3 className={styles.degree}>{weather.temperature.current}°</h3>
           </button>
         );
