@@ -8,8 +8,8 @@ import styles from "./WeatherList.module.scss";
 
 interface WeatherList {
   list: Weather[];
-  selectedDate: string;
-  onSelectedDateChange: (date: string) => void;
+  selectedDate: number;
+  onSelectedDateChange: (date: number) => void;
 }
 
 export function WeatherList({ list, selectedDate, onSelectedDateChange }: WeatherList) {
