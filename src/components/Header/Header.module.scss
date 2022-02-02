@@ -1,0 +1,77 @@
+@import "../../breakpoints.scss";
+
+.header {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  @include breakpoint(desktop) {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  @include breakpoint(desktop-xl) {
+    gap: 90px;
+  }
+}
+
+.header_left {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 48px;
+
+  @include breakpoint(desktop) {
+    flex: 1;
+    gap: 50px;
+  }
+
+  @include breakpoint(desktop-xl) {
+    gap: 90px;
+  }
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  min-width: 130px;
+}
+
+.icon svg {
+  max-width: 170px;
+
+  @include breakpoint(tablet) {
+    max-width: 200px;
+  }
+
+  @include breakpoint(desktop) {
+    max-width: 300px;
+  }
+}
+
+.weather {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather_min_max {
+  display: flex;
+  justify-content: space-between;
+  color: var(--secondary-text-color);
+}
+
+.date_city {
+  padding: 0 0 50px 32px;
+}
+
+.city {
+  padding-bottom: 16px;
+  color: var(--secondary-text-color);
+
+  @include breakpoint(desktop) {
+    padding-bottom: 32px;
+  }
+}

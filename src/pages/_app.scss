@@ -1,0 +1,72 @@
+@import "../breakpoints.scss";
+
+:root {
+  --main-bg-color: #262a59;
+  --secondary-bg-color: #51557a;
+  --main-text-color: #ffffff;
+  --secondary-text-color: #a8aabd;
+  --font-family: Roboto;
+  --font-size-h1: 246px;
+  --font-size-h2: 99px;
+  --font-size-h3: 83px;
+  --font-size-p: 48px;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-family), -apple-system, BlinkMacSystemFont, Segoe UI,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  fill: #ffc700;
+}
+
+// typograph
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(16px + 26 * ((100vw - 320px) / 1280));
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 42px;
+  }
+}
+
+h1 {
+  font-size: 5.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+}

@@ -1,0 +1,28 @@
+$bp-phone: 320px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+$bp-desktop-xl: 1200px;
+
+@mixin breakpoint($point) {
+  @if $point == phone {
+    @media (min-width: $bp-phone) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media (min-width: $bp-tablet) {
+      @content;
+    }
+  } @else if $point == desktop {
+    @media (min-width: $bp-desktop) {
+      @content;
+    }
+  } @else if $point == desktop-xl {
+    @media (min-width: $bp-desktop-xl) {
+      @content;
+    }
+  }
+}
+
+// @include breakpoint(tablet) {
+//   ...
+// }

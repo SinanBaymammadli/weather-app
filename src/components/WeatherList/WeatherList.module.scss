@@ -1,0 +1,41 @@
+.list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &:-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 16px;
+  cursor: pointer;
+  appearance: none;
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+  color: var(--main-text-color);
+  transition: 0.3s background-color ease;
+
+  &:hover {
+    background-color: var(--secondary-bg-color);
+  }
+}
+
+.item svg {
+  width: 120px;
+  height: 120px;
+}
+
+.time {
+  color: var(--secondary-text-color);
+}
