@@ -4,7 +4,6 @@ import SunIcon from "../Icons/SunIcon";
 import styles from "./Header.module.scss";
 import CloudIcon from "../Icons/CloudIcon";
 import { Weather } from "../../models";
-import { kelvinToCelcius } from "../../utils";
 
 interface HeaderProps extends Weather {}
 
@@ -21,12 +20,11 @@ export function Header({ date, city, condition, temperature }: HeaderProps) {
             <div className={styles.weather_min_max}>
               <p>{condition}</p>
               <p>
-                {kelvinToCelcius(temperature.max)}° /{" "}
-                {kelvinToCelcius(temperature.min)}°
+                {temperature.max}° / {temperature.min}°
               </p>
             </div>
 
-            <h1>{kelvinToCelcius(temperature.current)}°</h1>
+            <h1>{temperature.current}°</h1>
           </div>
         </div>
       </div>

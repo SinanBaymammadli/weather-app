@@ -4,6 +4,10 @@ interface IWeatherRepository {
   getWeatherList: () => Promise<Weather[]>;
 }
 
+export function kelvinToCelcius(k: number) {
+  return Math.round(k - 273.15);
+}
+
 export const WeatherRepository: IWeatherRepository = {
   getWeatherList: async () => {
     const res = await fetch(
@@ -14,9 +18,9 @@ export const WeatherRepository: IWeatherRepository = {
       date: item.dt_txt,
       city: json.city.name,
       temperature: {
-        current: item.main.temp,
-        max: item.main.temp_max,
-        min: item.main.temp_min,
+        current: kelvinToCelcius(item.main.temp),
+        max: kelvinToCelcius(item.main.temp_max),
+        min: kelvinToCelcius(item.main.temp_min),
       },
       condition: item.weather[0].main,
     }));

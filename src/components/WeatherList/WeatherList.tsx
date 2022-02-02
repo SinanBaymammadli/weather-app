@@ -1,7 +1,6 @@
 import format from "date-fns/format";
-import React, { useState } from "react";
+import React from "react";
 import { Weather } from "../../models";
-import { kelvinToCelcius } from "../../utils";
 import CloudIcon from "../Icons/CloudIcon";
 import SunIcon from "../Icons/SunIcon";
 import styles from "./WeatherList.module.scss";
@@ -34,9 +33,7 @@ export function WeatherList({
             <div>
               {weather.condition === "Clear" ? <SunIcon /> : <CloudIcon />}
             </div>
-            <h3 className={styles.degree}>
-              {kelvinToCelcius(weather.temperature.current)}°
-            </h3>
+            <h3 className={styles.degree}>{weather.temperature.current}°</h3>
           </button>
         );
       })}
