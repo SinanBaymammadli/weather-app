@@ -1,5 +1,5 @@
 export interface Weather {
-  date: string;
+  date: number;
   city: string;
   temperature: {
     current: number;

@@ -15,7 +15,7 @@ export const WeatherRepository: IWeatherRepository = {
     );
     const json = await res.json();
     const list: Weather[] = json.list.map((item: any) => ({
-      date: item.dt_txt,
+      date: item.dt * 1000,
       city: json.city.name,
       temperature: {
         current: kelvinToCelcius(item.main.temp),

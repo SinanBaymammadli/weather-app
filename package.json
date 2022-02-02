@@ -5,7 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:style": "stylelint '**/*.{scss,css}'",
     "format": "prettier . --write"
   },
