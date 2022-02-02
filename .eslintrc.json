@@ -6,7 +6,7 @@
       "version": "detect"
     }
   },
-  "plugins": ["@typescript-eslint", "simple-import-sort", "react-hooks"],
+  "plugins": ["@typescript-eslint", "simple-import-sort", "react-hooks", "testing-library"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
@@ -24,5 +24,12 @@
     "simple-import-sort/exports": "error",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn"
-  }
+  },
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    }
+  ]
 }
