@@ -23,11 +23,11 @@ describe("WeatherList", () => {
       <WeatherList list={list} selectedDate={1487246400000} onSelectedDateChange={jest.fn()} />
     );
 
-    expect(screen.getByText("16:00")).toBeInTheDocument();
+    expect(screen.getByText("12:00")).toBeInTheDocument();
     expect(screen.getByText("14°")).toBeInTheDocument();
     expect(screen.getByTitle("weather-sun")).toBeInTheDocument();
 
-    expect(screen.getByText("19:00")).toBeInTheDocument();
+    expect(screen.getByText("15:00")).toBeInTheDocument();
     expect(screen.getByText("13°")).toBeInTheDocument();
     expect(screen.getByTitle("weather-cloud")).toBeInTheDocument();
   });

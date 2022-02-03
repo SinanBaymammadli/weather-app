@@ -5,15 +5,14 @@
   --secondary-bg-color: #51557a;
   --main-text-color: #fff;
   --secondary-text-color: #a8aabd;
-  --font-family: roboto;
+  --font-family: "Roboto";
+  --accent-color: #ffc700;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu,
-    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
@@ -34,13 +33,16 @@ img {
 }
 
 svg {
-  fill: #ffc700;
+  fill: var(--accent-color);
 }
 
 /* typograph */
 
 html {
   font-size: 16px;
+  font-family: var(--font-family), -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 320px) {

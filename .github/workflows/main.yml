@@ -21,5 +21,3 @@ jobs:
       - run: yarn lint:style
       - run: yarn lint:js
       - run: yarn test:ci
-      - run: yarn cypress:headless
-      - run: yarn e2e:headless
