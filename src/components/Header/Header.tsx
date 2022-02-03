@@ -23,7 +23,7 @@ export function Header({ date, city, condition, temperature }: HeaderProps) {
               </p>
             </div>
 
-            <h1>{temperature.current}°</h1>
+            <h1 data-testid="main-temperature">{temperature.current}°</h1>
           </div>
         </div>
       </div>

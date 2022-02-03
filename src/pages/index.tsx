@@ -21,7 +21,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
 };
 
 const Home: NextPage<HomeProps> = ({ list }) => {
-  const [selectedDate, setSelectedDate] = useState(list[0].date);
+  const [selectedDate, setSelectedDate] = useState(list[0]?.date);
   const selected = list.find((item) => item.date === selectedDate);
 
   return (
@@ -29,6 +29,7 @@ const Home: NextPage<HomeProps> = ({ list }) => {
       <Head>
         <title>Weather App</title>
       </Head>
+
       {selected && (
         <Header
           date={selected.date}

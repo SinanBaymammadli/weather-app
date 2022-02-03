@@ -8,11 +8,12 @@ export function kelvinToCelcius(k: number) {
   return Math.round(k - 273.15);
 }
 
+export const WEATHER_API_URL =
+  "https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22";
+
 export const WeatherRepository: IWeatherRepository = {
   getWeatherList: async () => {
-    const res = await fetch(
-      "https://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b6907d289e10d714a6e88b30761fae22"
-    );
+    const res = await fetch(WEATHER_API_URL);
     const json = await res.json();
     const list: Weather[] = json.list.map((item: any) => ({
       date: item.dt * 1000,

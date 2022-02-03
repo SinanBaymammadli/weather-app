@@ -10,6 +10,7 @@ export default function SunIcon() {
       y="0px"
       viewBox="0 0 24 24"
       xmlSpace="preserve"
+      aria-label="Sun icon"
     >
       <title>weather-sun</title>
       <path
