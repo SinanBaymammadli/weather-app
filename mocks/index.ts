@@ -4,7 +4,7 @@ if (typeof window === "undefined") {
   server.listen();
 } else {
   const { worker } = require("./browser");
-  worker.start();
+  worker.start({ onunhandledrejection: "bypass" });
 }
 
 export {};

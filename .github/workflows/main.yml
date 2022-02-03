@@ -1,0 +1,26 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+- uses: actions/setup-node@v1
+  with:
+    node-version: 14
+- run: npm install -g yarn
+- run: yarn install --frozen-lockfile
+- run: yarn build
+- run: yarn format
+- run: yarn lint:style
+- run: yarn lint:js
+- run: yarn test:ci
+- run: yarn cypress:headless
+- run: yarn e2e:headless
