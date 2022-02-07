@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
 import { Forecast } from "../models";
-import Home from "./index";
+import Home from "../pages/index";
 
 const list: Forecast[] = [
   {
@@ -18,7 +18,9 @@ const list: Forecast[] = [
   },
 ];
 
-window.HTMLElement.prototype.scrollIntoView = jest.fn();
+if (typeof window !== "undefined") {
+  window.HTMLElement.prototype.scrollIntoView = jest.fn();
+}
 
 describe("Header", () => {
   it("renders given data correctly", () => {
