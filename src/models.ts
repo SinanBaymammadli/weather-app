@@ -1,4 +1,4 @@
-export interface Weather {
+export interface Forecast {
   date: number;
   city: string;
   temperature: {
@@ -6,5 +6,5 @@ export interface Weather {
     max: number;
     min: number;
   };
-  condition: string;
+  condition: "Clear" | "Clouds";
 }

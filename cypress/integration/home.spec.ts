@@ -1,4 +1,4 @@
-import { WEATHER_API_URL } from "../../src/data";
+import { API_URL } from "../../src/data";
 
 const mocks = {
   cod: "200",
@@ -50,7 +50,7 @@ const mocks = {
   },
 };
 
-describe("example to-do app", () => {
+describe("Weather app", () => {
   beforeEach(() => {
     cy.visit("/");
   });
@@ -63,7 +63,7 @@ describe("example to-do app", () => {
     cy.window().then((window) => {
       const { worker, rest } = (window as any).msw;
       worker.use(
-        rest.get(WEATHER_API_URL, (req, res, ctx) => {
+        rest.get(API_URL, (req, res, ctx) => {
           return res(ctx.json(mocks));
         })
       );

@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function CloudIcon() {
+interface CloudIconProps extends React.SVGProps<SVGSVGElement> {}
+
+export default function CloudIcon({ ...props }: CloudIconProps) {
   return (
     <svg
       fill="none"
@@ -8,6 +10,7 @@ export default function CloudIcon() {
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      {...props}
     >
       <title>weather-cloud</title>
       <clipPath id="a">

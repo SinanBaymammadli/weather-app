@@ -23,7 +23,8 @@
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/no-empty-interface": "off"
   },
   "overrides": [
     // Only uses Testing Library lint rules in test files

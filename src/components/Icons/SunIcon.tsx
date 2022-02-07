@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function SunIcon() {
+interface SunIconProps extends React.SVGProps<SVGSVGElement> {}
+
+export default function SunIcon({ ...rest }: SunIconProps) {
   return (
     <svg
       version="1.1"
@@ -11,6 +13,7 @@ export default function SunIcon() {
       viewBox="0 0 24 24"
       xmlSpace="preserve"
       aria-label="Sun icon"
+      {...rest}
     >
       <title>weather-sun</title>
       <path

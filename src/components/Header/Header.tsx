@@ -1,22 +1,28 @@
 import format from "date-fns/format";
 import React from "react";
 
-import { Weather } from "../../models";
+import { Forecast } from "../../models";
 import CloudIcon from "../Icons/CloudIcon";
 import SunIcon from "../Icons/SunIcon";
 import styles from "./Header.module.scss";
 
-type HeaderProps = Weather;
+interface HeaderProps extends Forecast {}
 
 export function Header({ date, city, condition, temperature }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.header_left}>
-        <div className={styles.icon}>{condition === "Clear" ? <SunIcon /> : <CloudIcon />}</div>
+        <div className={styles.icon}>
+          {condition === "Clear" ? (
+            <SunIcon data-testid="sun-icon" />
+          ) : (
+            <CloudIcon data-testid="cloud-icon" />
+          )}
+        </div>
 
-        <div className={styles.weather}>
+        <div className={styles.forecast}>
           <div>
-            <div className={styles.weather_min_max}>
+            <div className={styles.forecast_min_max}>
               <p>{condition}</p>
               <p>
                 {temperature.max}° / {temperature.min}°

@@ -1,9 +1,9 @@
 import { rest } from "msw";
 
-import { WEATHER_API_URL } from "../src/data";
+import { API_URL } from "../src/data";
 
 export const handlers = [
-  rest.get(WEATHER_API_URL, (req, res, ctx) => {
+  rest.get(API_URL, (req, res, ctx) => {
     return res(
       ctx.json({
         cod: "200",

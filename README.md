@@ -13,11 +13,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## App structure
 
 This app is written in `Typescript` and uses `Nextjs` for SSR, it has 1 page on `src/pages/index.js`.
-Data layer is on `src/data.ts` and has only 1 repository called `WeatherRepository`
+Data layer is on `src/data.ts` and has only 1 repository called `ForecastRepository`
 
 ## Testing
 
-Unit tests are located alongside with the components and uses `jest` and `@testing-library/react`
+Unit tests use `jest` and `@testing-library/react`.
 E2e tests are written with `cypress` and uses `@testing-library/cypress` for element locators to be consistent with unit tests.
 Test and development enviroments both uses `mswjs` for mocking http requests.
 
